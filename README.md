@@ -1,6 +1,6 @@
 # REST API example application
 
-This is a test application providing a REST API.
+This is a test application providing a REST API to create contact.
 # REST API
 
 The REST API to the example app is described below.
