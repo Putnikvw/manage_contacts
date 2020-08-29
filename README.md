@@ -1,6 +1,7 @@
 # REST API example application
 
 This is a test application providing a REST API to create contact.
+By default generate 10 contacts and you can try to do requests 
 # REST API
 
 The REST API to the example app is described below.
