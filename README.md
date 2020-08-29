@@ -11,7 +11,7 @@ The REST API to the example app is described below.
 
 `GET /api/v1/contacts`
 
-    curl -i -H 'Accept: application/json' http://localhost:8080/api/v1/contacts
+    curl -i -H 'Accept: application/json' http://localhost:9080/api/v1/contacts
 
 ### Response
 
@@ -30,7 +30,7 @@ The REST API to the example app is described below.
 
 `POST /api/v1/contacts`
 
-    curl -i -H 'Accept: application/json' -d { "fullName": "John Wick", "birthday": "2015-03-01", "address": {"city": "Kyiv","postCode": "12345"}} http://localhost:8080/api/v1
+    curl -i -H 'Accept: application/json' -d { "fullName": "John Wick", "birthday": "2015-03-01", "address": {"city": "Kyiv","postCode": "12345"}} http://localhost:9080/api/v1
 
 ### Response
 
@@ -58,7 +58,7 @@ The REST API to the example app is described below.
 
 `GET /api/v1/contacts?postcode=?`
 
-    curl -i -H 'Accept: application/json' http://localhost:8080/api/v1/contacts?postcode=12345
+    curl -i -H 'Accept: application/json' http://localhost:9080/api/v1/contacts?postcode=12345
 
 ### Response
 
