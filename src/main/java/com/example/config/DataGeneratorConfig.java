@@ -2,25 +2,19 @@ package com.example.config;
 
 import com.example.repository.ContactRepository;
 import com.example.util.TestDataGenerator;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
-public class DataGeneratorConfig implements InitializingBean {
+import javax.annotation.PostConstruct;
+
+@Component
+public class DataGeneratorConfig {
 
     @Autowired
     private ContactRepository contactRepository;
 
-    @Bean
-    public TestDataGenerator dataGenerator() {
-        return new TestDataGenerator();
-    }
-
-
-    @Override
-    public void afterPropertiesSet() {
-        contactRepository.saveAll(dataGenerator().generateContactList(10));
+    @PostConstruct
+    public void dataGenerator() {
+        contactRepository.saveAll(new TestDataGenerator().generateContactList(10));
     }
 }

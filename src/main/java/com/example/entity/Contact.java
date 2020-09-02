@@ -31,7 +31,7 @@ public class Contact {
     @Column(name = "birthday")
     private LocalDate birthday;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @Embedded
     private Address address;
 
 }

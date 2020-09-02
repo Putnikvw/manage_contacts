@@ -30,14 +30,11 @@ public class ContactController {
             return contactService.getAll();
     }
 
-    @PostMapping
+    @PostMapping("/contacts")
     @ResponseStatus(HttpStatus.CREATED)
     public Contact addContact(@RequestBody Contact contact) {
         LOGGER.info("Start add a new contact");
 
-        contactService.addContact(contact);
-
-        LOGGER.info("The new contact has already added" + contact.toString());
-        return contact;
+        return contactService.addContact(contact);
     }
 }

@@ -31,7 +31,15 @@ The REST API to the example app is described below.
 
 `POST /api/v1/contacts`
 
-    curl -i -H 'Accept: application/json' -d { "fullName": "John Wick", "birthday": "2015-03-01", "address": {"city": "Kyiv","postCode": "12345"}} http://localhost:9080/api/v1
+    curl -i -H 'Accept: application/json' http://localhost:9080/api/v1
+    -d  { 
+            "fullName": "John Wick", 
+            "birthday": "2015-03-01", 
+            "address": {
+                "city": "Kyiv",
+                "postCode": "12345"
+            }
+        } 
 
 ### Response
 
