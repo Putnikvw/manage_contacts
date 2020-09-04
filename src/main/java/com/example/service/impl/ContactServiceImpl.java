@@ -19,10 +19,6 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Contact addContact(Contact contact) {
-        if(contact.getKey() == null) {
-            contact.setKey(UUID.randomUUID().toString());
-        }
-
         return contactRepository.saveAndFlush(contact);
     }
 

@@ -8,7 +8,6 @@ import io.codearte.jfairy.producer.person.Person;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -21,7 +20,6 @@ public class TestDataGenerator {
 
         Contact contact = new Contact();
         contact.setFullName(person.getFullName());
-        contact.setKey(UUID.randomUUID().toString());
         contact.setBirthday(LocalDate.of(
                 person.getDateOfBirth().getYear(),
                 person.getDateOfBirth().getMonthOfYear(),
