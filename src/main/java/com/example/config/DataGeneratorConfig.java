@@ -15,6 +15,6 @@ public class DataGeneratorConfig {
 
     @PostConstruct
     public void dataGenerator() {
-        contactRepository.saveAll(new TestDataGenerator().generateContactList(10));
+        contactRepository.saveAll(new TestDataGenerator().generateContactList(14));
     }
 }

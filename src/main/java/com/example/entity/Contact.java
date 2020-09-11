@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.security.Policy;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "contacts")
 @JsonIgnoreProperties
-public class Contact {
+public class Contact implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
