@@ -1,6 +1,7 @@
 package com.example;
 
-import com.example.config.DataGeneratorConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -9,8 +10,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories
 public class ManageContactsApplication {
 
+    private static final Logger LOG = LoggerFactory.getLogger(ManageContactsApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(ManageContactsApplication.class, args);
     }
+
+
+
 
 }

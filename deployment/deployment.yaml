@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contacts
+  labels:
+    app: contacts
+spec:
+  type: LoadBalancer
+  selector:
+    app: contacts
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: http
+
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: contacts
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: contacts
+    spec:
+      containers:
+        - name: contacts
+          image: putnikvw/contacts:latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            timeoutSeconds: 1

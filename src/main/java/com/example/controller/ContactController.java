@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
+@RolesAllowed("admin")
 @RestController
 @RequestMapping("/api/v1")
 public class ContactController {
@@ -18,6 +20,12 @@ public class ContactController {
 
     @Autowired
     private ContactService contactService;
+
+    @GetMapping("/health")
+    @ResponseStatus(HttpStatus.OK)
+    public String getHealth(){
+        return "OK";
+    }
 
 
     @GetMapping("/contacts")

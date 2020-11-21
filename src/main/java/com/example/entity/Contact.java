@@ -34,6 +34,21 @@ public class Contact implements Serializable {
     @Column(name = "birthday")
     private LocalDate birthday;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "sex")
+    private String sex;
+
+    @Column(name = "passport")
+    private String passport;
+
+    @Column(name = "companyEmail")
+    private String companyEmail;
+
+    @Column(name = "nationalIdentityCardNumber")
+    private String nationalIdentityCardNumber;
+
     @Embedded
     private Address address;
 

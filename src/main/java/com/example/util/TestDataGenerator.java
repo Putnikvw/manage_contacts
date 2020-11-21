@@ -20,6 +20,11 @@ public class TestDataGenerator {
 
         Contact contact = new Contact();
         contact.setFullName(person.getFullName());
+        contact.setCompanyEmail(person.getCompanyEmail());
+        contact.setPassport(person.getPassportNumber());
+        contact.setEmail(person.getEmail());
+        contact.setSex(person.getSex().toString());
+        contact.setNationalIdentityCardNumber(person.getNationalIdentityCardNumber());
         contact.setBirthday(LocalDate.of(
                 person.getDateOfBirth().getYear(),
                 person.getDateOfBirth().getMonthOfYear(),

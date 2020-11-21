@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
+
 public class DataGeneratorConfig {
 
     @Autowired
@@ -15,6 +15,6 @@ public class DataGeneratorConfig {
 
     @PostConstruct
     public void dataGenerator() {
-        contactRepository.saveAll(new TestDataGenerator().generateContactList(14));
+        contactRepository.saveAll(new TestDataGenerator().generateContactList(4));
     }
 }
